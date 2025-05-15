@@ -47,7 +47,7 @@
     </div>
     <div id="fps">FPS: 0</div>
     <script>
-alert("Reminder: Powerful Mobile Recommended");
+alert("Reminder: Mobile Are Allowed, But Strong Device Is Recommended");
     var cx, cy;
     var glposition;
     var glright;
@@ -77,18 +77,18 @@ alert("Reminder: Powerful Mobile Recommended");
             "   vec3 a;\n" +
             "float b,c,d,e;\n" +
             "   a=ver;\n" +
-            "   for(int i=0;i<5;i++){\n" +
+            "   for(int i=0;i<3;i++){\n" +
             "       b=length(a);\n" +
-            "       c=atan(a.y,a.x)*6.0;\n" +
-            "       e=1.0/b;\n" +
-            "       d=acos(a.z/b)*6.0;\n" +
+            "       c=atan(a.y,a.x)*5.0;\n" +
+            "       e=-0.25/b;\n" +
+            "       d=acos(a.z/b)*5.0;\n" +
             "       b=pow(b,5.0);\n" +
             "       a=vec3(b*sin(d)*cos(c),b*sin(d)*sin(c),b*cos(d))+ver;\n" +
-            "       if(b>6.0){\n" +
+            "       if(b>3.5){\n" +
             "           break;\n" +
             "       }\n" +
             "   }" +
-            "   return 4.0-a.x*a.x-a.y*a.y-a.z*a.z;" +
+            "   return 3.0-a.x*a.x-a.y*a.y-a.z*a.z;" +
             "}";
     var vertshade;
     var fragshader;
