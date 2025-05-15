@@ -5,32 +5,78 @@
     <title>VSBM Computer</title>
     <style>
         body {
-            background-color: #000000;
-        }
-        #main {
-            transform-origin: 0px 0px;
-            position: fixed;
+            background: #000000;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         #btn {
             position: fixed;
             left: 20px;
-            top: 10px;
+            top: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 8px;
+            padding: 12px 20px;
+            color: #00ff88;
+            font-size: 14px;
             z-index: 100;
         }
         #config {
             position: fixed;
             left: 20px;
-            top: 50px;
-            background: rgb(0, 0, 0);
+            top: 70px;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 12px;
+            padding: 15px;
             display: none;
             z-index: 99;
         }
+        #kernel {
+            width: 280px;
+            height: 180px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 8px;
+            color: #00ff88;
+            padding: 10px;
+            font-family: 'Consolas', monospace;
+            font-size: 14px;
+            resize: none;
+            margin-bottom: 10px;
+        }
+        #apply, #cancle {
+            background: rgba(0, 255, 136, 0.15);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 6px;
+            color: #00ff88;
+            padding: 8px 16px;
+            margin-right: 8px;
+            font-size: 14px;
+        }
         #fps {
             position: fixed;
-            left: 80px;
-            top: 12.5px;
+            left: 105px;
+            top: 23px;
             font-size: 14px;
-            color: white;
+            color: #00ff88;
+            background: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            z-index: 100;
+        }
+        #main {
+            transform-origin: 0px 0px;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+        }
+        #c1 {
+            position: fixed;
         }
     </style>
 </head>
@@ -77,18 +123,18 @@
             "   vec3 a;\n" +
             "float b,c,d,e;\n" +
             "   a=ver;\n" +
-            "   for(int i=0;i<5;i++){\n" +
+            "   for(int i=0;i<4;i++){\n" +
             "       b=length(a);\n" +
-            "       c=atan(a.y,a.x)*8.0;\n" +
-            "       e=1.0/b;\n" +
-            "       d=acos(a.z/b)*8.0;\n" +
-            "       b=pow(b,8.0);\n" +
+            "       c=atan(a.y,a.x)*7.0;\n" +
+            "       e=0.5/b;\n" +
+            "       d=acos(a.z/b)*7.0;\n" +
+            "       b=pow(b,7.0);\n" +
             "       a=vec3(b*sin(d)*cos(c),b*sin(d)*sin(c),b*cos(d))+ver;\n" +
-            "       if(b>6.0){\n" +
+            "       if(b>4.0){\n" +
             "           break;\n" +
             "       }\n" +
             "   }" +
-            "   return 4.0-a.x*a.x-a.y*a.y-a.z*a.z;" +
+            "   return 3.5-a.x*a.x-a.y*a.y-a.z*a.z;" +
             "}";
     var vertshade;
     var fragshader;
